@@ -115,7 +115,7 @@ defmodule TgClient.Utils do
     "#{session_env_path}/#{phone_hash(phone)}"
   end
   defp session_env_path do
-    Application.get_env(:tg_client, :session_env_path)
+    Config.get!(:tg_client, :session_env_path)
   end
 
 
@@ -127,11 +127,11 @@ defmodule TgClient.Utils do
   end
 
   defp daemon do
-    Application.get_env(:tg_client, :daemon)
+    Config.get!(:tg_client, :daemon)
   end
 
   defp server_key do
-    Application.get_env(:tg_client, :key)
+    Config.get!(:tg_client, :key)
   end
 
 end
